@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;700;800&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://kit.fontawesome.com/980ae3f9ab.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="signInPage">
+            <div></div>
+            <div class="loginform">
+                <div class="image"></div>
+                <div class="login">
+
+                    <div></div>
+                    <div class="content">
+                        <div class="acclogin flex">
+                            ACCOUNT LOGIN
+                        </div>
+                        <div class="user-pass">
+                            <div class="user">
+                                <input type="text" class="username" placeholder="User Id">
+                            </div>
+                            <div class="pass">
+                                <input type="password" class="password" placeholder="Password">
+                            </div>
+                        </div>
+                        <div class="signin flex">SIGN IN</div>
+                        <div class="forgot-pass flex">
+                            Forgot 
+                            <span> User name / Password?</span>
+                        </div>
+                        <div class="signup flex">
+                            <div class="signupbtn flex">
+                                <a href="http://127.0.0.1:5500/signup/signup.html">SIGN UP</a>
+                            </div>
+                        </div>
+                        <div class="signInWithGoogle">
+                            <div class="innerButton flex">
+                                <i class="fab fa-google"></i>
+                                <p>Sign in with Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div></div>
+                </div>
+            </div>
+            <div></div>
+
+
+
+        </div>
+       
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDv2JfmZEAmIiTsS0TmMZFu0RonkTopfxY",
+    authDomain: "payrollmanagement-system.firebaseapp.com",
+    databaseURL: "https://payrollmanagement-system.firebaseio.com",
+    projectId: "payrollmanagement-system",
+    storageBucket: "payrollmanagement-system.appspot.com",
+    messagingSenderId: "165995460018",
+    appId: "1:165995460018:web:ec3d24b21b84ecb5d8a0ab"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <script src="./index.js"></script>
+</body>
+</html>

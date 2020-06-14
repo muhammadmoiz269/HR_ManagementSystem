@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="./adminpanel.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;700;800&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/980ae3f9ab.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="page1">
+
+            <div></div>
+            <div class="center">
+                <div class="content-header">
+                    <div class="heading flex">
+                        <h1>ADMIN</h1>
+                    </div>
+                    <div class="search-bar">
+                        <div class="date">
+                            <div class="date-child">8-May-2020</div>
+                        </div>
+                        <div class="search flex">
+                            <div class="search-child flex">
+                                <input type="text" class="searching" placeholder="Search here.">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-area">
+                    <div class="person1-content persons">
+                        <div class="image flex">
+                            <div class="innerimage">
+                                <img src="./loading.gif" width="90px" height="90px" style="border-radius:50%">
+                            </div>
+                        </div>
+                        <div class="content">
+                            <div class="name info">
+                                <p>Muhammad Moiz</p>
+                            </div>
+                            <div class="designation info">
+                                <p>CEO</p>
+
+                            </div>
+                            <div class="cnic info">
+                                <p>42000-272-1763-3</p>
+                            </div>
+                        </div>
+                        <div class="icons">
+                            <div class="icon1">
+                                <i class="fas fa-angle-double-right next"></i>
+                            </div>
+                            <div class="icon2">
+                                <i class="fas fa-trash-alt del"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                  
+                </div>
+                <div class="content-footer flex">
+                    <div class="add-btn flex">
+                        <i class="fas fa-plus-circle addbtn"></i>
+
+                    </div>
+                </div>
+
+            </div>
+            <div></div>
+        </div>
+        <div class="page2">
+            <div></div>
+            <div class="employeepage">
+                <div class="page2-head flex">
+                    Create New Employee
+                </div>
+                <div class="page2-content">
+                   <div class="name page2cont">
+                    <input type="text" class="username" id="U-name" placeholder="User name">
+                   </div>
+                   <div class="father-name page2cont">
+                    <input type="text" class="username" id="U-fname" placeholder="Father name">
+                   </div>
+                   <div class="cnic page2cont">
+                    <input type="text" class="username" id="U-cnic" placeholder="Cnic">
+                   </div>
+                   <div class="designation page2cont">
+                    <input type="text" class="username" id="U-designation" placeholder="Designation">
+                   </div>
+                   <div class="joining-date page2cont">
+                    <input type="date" class="username" id="U-date" placeholder="Joining Date">
+                   </div>
+                   <div class="image page2cont">
+                    <input type="file" class="username" id="employeepic" placeholder="Image">
+                   </div>
+                </div>
+                <div class="page2-lower">
+                    <div class="create flex">
+                        <div class="inner-create flex">Create</div>
+                    </div>
+                    <div class="back flex">
+                        <div class="inner-back flex">Back</div>
+                    </div>
+                </div>
+            </div>
+            <div></div>
+        </div>
+       
+
+    </div>
+        
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDv2JfmZEAmIiTsS0TmMZFu0RonkTopfxY",
+    authDomain: "payrollmanagement-system.firebaseapp.com",
+    databaseURL: "https://payrollmanagement-system.firebaseio.com",
+    projectId: "payrollmanagement-system",
+    storageBucket: "payrollmanagement-system.appspot.com",
+    messagingSenderId: "165995460018",
+    appId: "1:165995460018:web:ec3d24b21b84ecb5d8a0ab"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script src="./adminpanel.js"></script>
+    
+</body>
+</html>

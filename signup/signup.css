@@ -1,0 +1,216 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.container{
+    display: grid;
+    grid-template-rows: repeat(1,100vh);
+   
+    grid-template-areas: "signUpPage";
+
+}
+
+html{
+    font-size: 62.5%;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --headingfont: 'Poppins', sans-serif;
+    --parafont:'Josefin Sans', sans-serif;
+    --btnfont:'Ubuntu', sans-serif;
+    --logofont:'Pacifico', cursive;
+    --light:300;
+    --regular:400;
+    --medium:500;
+    --semibold:600;
+    --bold:700;
+
+}
+.signUpPage{
+    background: #ecf0f1;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 950px) minmax(1rem, 1fr);
+    grid-template-areas: ". signup .";
+}
+.signup{
+    background: #ffff;
+    height: 90%;
+    position: relative;
+    top: 5%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: grid;
+    grid-template-columns: 10fr 85fr 5fr;
+    grid-template-areas: ". content-image .";
+  
+}
+.content-image{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    grid-template-areas: "content image";
+}
+.content{
+    /* background: pink; */
+    display: grid;
+    grid-template-rows: 25fr 10fr 10fr 10fr 10fr 10fr 25fr;
+    grid-template-areas: "heading"
+                         "name"
+                         "email"
+                         "pass"
+                         "repeat-pass"
+                         "terms"
+                         "register";
+
+   
+}
+.heading{
+    /* background: royalblue; */
+    font-size: 3.5rem;
+    font-family: var(--headingfont);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+   
+}
+.name{
+    background: #ffff;
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    border-bottom: solid 1px gray;
+}
+.yourname{
+    /* padding: 1.2rem 3rem; */
+    width: 80%;
+    height: 80%;
+    font-family: var(--parafont);
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    /* padding-left: 3rem; */
+    
+
+
+}
+::placeholder{
+    outline: none;
+    background:#ffff;
+     padding: 1.7rem 3rem;
+}
+.yourname:focus{
+    outline: none;
+    background: #ffff;
+}
+
+.email{
+    background: #ffff;
+    border-bottom: solid 1px gray;
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    padding-top: 5px;
+}
+.pass{
+    background: #ffff;
+    border-bottom: solid 1px gray;
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    padding-top: 5px;
+}
+.repeat-pass{
+    background: #ffff;
+    border-bottom: solid 1px gray;
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    padding-top: 5px;
+}
+.terms{
+    background: #ffff;
+    /* padding-top: 15px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+   
+    
+}
+.checkbox{
+
+    height: 15px;
+    width: 15px;
+   
+    
+}
+.terms>span{
+
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    padding-left: 3rem;
+    color: gray;
+
+}
+.register{
+    /* background: royalblue; */
+}
+.image{
+    width: 100%;
+    height: 100%;
+   
+   
+}
+.inner-image{
+    height: 70%;
+    width: 90%;
+/* background: red; */
+    background: url("./table.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 15%;
+    left: 15%;
+
+}
+.reg-btn{
+    height: 30%;
+    width: 30%;
+    font-size: 1.8rem;
+    background: #05c46b;
+    border: 1px solid #05c46b;
+    color: #ffff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-family: var(--parafont);
+}
+.reg-btn:hover{
+    cursor: pointer;
+}
+@media only screen and (max-width: 750px){
+    html{
+        font-size: 57%;
+    }
+
+}
+@media only screen and (max-width: 600px){
+    html{
+        font-size: 54%;
+    }
+    .content-image{
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 100fr;
+        grid-template-rows: 100fr;
+
+        grid-template-areas: "content";
+    }
+
+
+}

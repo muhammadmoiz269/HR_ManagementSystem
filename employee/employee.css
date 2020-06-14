@@ -1,0 +1,496 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.container{
+    display: grid;
+    grid-template-rows: repeat(1,100vh);
+    grid-template-areas: "page1";
+   
+
+}
+html{
+    font-size: 62.5%;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root{
+    --headingfont: 'Poppins', sans-serif;
+    --parafont:'Josefin Sans', sans-serif;
+    --btnfont:'Ubuntu', sans-serif;
+    --logofont:'Pacifico', cursive;
+    --light:300;
+    --regular:400;
+    --medium:500;
+    --semibold:600;
+    --bold:700;
+
+}
+
+.page1{
+    display: grid;
+    grid-template-columns: minmax(1rem,1fr) minmax(min-content,1100px) minmax(1rem,1fr);
+    grid-template-areas: ". empdata .";    
+}
+.empdata{
+    /* background: rosybrown; */
+    display: grid;
+    grid-template-rows: 20fr 80fr;
+    grid-template-areas: "header"
+                         "content";
+}
+.header{
+    /* background: salmon; */
+    display: grid;
+    grid-template-columns: 20fr 60fr 20fr;
+    grid-template-areas: "image heading name";
+
+}
+.image{
+    /* background:lightcoral; */
+}
+.innerimage{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    /* background: url("./IMG-20190326-WA0026.jpg");
+    background-size: 100% 100%; */
+    box-shadow: 2px 4px 10px 0px gray;
+}
+.heading{
+    /* background: turquoise; */
+    /* justify-content: flex-start; */
+}
+.heading>p{
+    color: #3d3d3d;
+    font-size: 5rem;
+    font-family: var(--parafont);
+    /* font-weight: bold; */
+    letter-spacing: 0.2rem;
+  
+}
+.content{
+    /* background: silver; */
+    display: grid;
+    grid-template-rows: 15fr 70fr 15fr;
+    grid-template-areas: "columns-head"
+                         "columns-content"
+                         "button";
+
+}
+.columns-head{
+    background: #ffff;
+    display: grid;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+    grid-template-areas: "date credit debit balance icons";
+    align-items: flex-end;
+    
+
+}
+
+.contentHeading{
+    /* border: solid 1px black; */
+    font-size: 2.5rem;
+    color:#05c46b;
+    font-family: var(--parafont);
+
+}
+.columns-content{
+    /* background: sienna; */
+    height: 330px;
+    overflow-y: scroll;
+   
+
+}
+.outercontent{
+    background: #ffff;
+    display: grid;
+    grid-template-columns: 20fr 20fr 20fr 20fr 20fr;
+    grid-template-areas: "date credit debit balance icons";
+    padding: 2rem 0rem;
+}
+.cont{
+    font-size: 2rem;
+    color:gray;
+    font-family: var(--parafont);
+
+}
+.cont-icons{
+    padding-left: 3rem;
+}
+.cont-icons>i{
+    padding: 0rem 1rem;
+
+}
+.cont-icons>i.update:hover{
+    cursor: pointer;
+    color: #05c46b;
+}
+.cont-icons>i.delete:hover{
+    cursor: pointer;
+    color: #ff5e57;
+}
+.cont-balance{
+    /* padding-left: 1.5rem; */
+}
+
+.content1{
+    /* background: blue; */
+    border-bottom: solid 1px black;
+    color: gray;
+}
+.content2{
+    /* background: burlywood; */
+    border-bottom: solid 1px black;
+    color: gray;
+
+
+}
+.content3{
+    /* background: blue; */
+    border-bottom: solid 1px black;
+    color: gray;
+
+
+}
+.content4{
+    /* background: burlywood; */
+    border-bottom: solid 1px black;
+    color: gray;
+
+
+    
+}
+.content5{
+    /* background: blue; */
+    border-bottom: solid 1px black;
+    color: gray;
+
+
+}
+
+.name>i{
+    font-size: 3rem;
+    color: #05c46b;
+    padding-top:1rem ;
+}
+.name>i:hover{
+    cursor: pointer;
+}
+.name{
+   
+    /* align-items: flex-end; */
+    flex-flow: column;
+}
+.name>h4{
+    padding-top: 0.8rem;
+    font-size: 2rem;
+    color: gray;
+    font-family: var(--parafont);
+    font-weight: lighter;
+
+}
+
+.name>p{
+    padding-top: 3rem;
+    font-size: 2rem;
+    color: gray;
+    font-family: var(--parafont);
+
+}
+.button{
+    /* background:pink; */
+    display: grid;
+    grid-template-columns: 45fr 10fr 45fr;
+    grid-template-areas: "amount add-btn search";
+ 
+}
+.amount{
+    /* background: red; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.amount >p{
+    font-size: 3rem;
+    color: black;
+    font-family: var(--parafont);
+    /* font-weight: var(--semibold); */
+    
+}
+.amount span{
+    font-family: var(--parafont);
+    /* font-weight: var(--semibold); */
+    font-size: 2.5rem;
+    color: #05c46b;
+    
+
+}
+.search{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.search-child{
+    width: 70%;
+    height: 70%;
+    /* background: red; */
+}
+.searching{
+    /* padding: 1.2rem 2.7rem; */
+    height: 80%;
+    width: 80%;
+    font-family: var(--parafont);
+    font-size: 1.5rem;
+    font-family: var(--parafont);
+    border: 1px solid gray;
+    padding-left: 2rem;
+    
+
+
+}
+.searching:focus{
+    outline: none;
+}
+
+.add-btn{
+    height: 100%;
+    width: 100%;
+   font-size: 4rem; 
+    /* background: blue; */
+}
+.addbtn:hover{
+    cursor: pointer;
+    color: #55efc4;
+}
+.page2{
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    height: 90%;
+    width: 60%;
+    background: #ecf0f1;
+    visibility: hidden;
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) minmax(min-content, 650px) minmax(1rem, 1fr);
+    grid-template-areas: ". employeepage .";
+    border:1px solid #ffff;
+    
+}
+.employeepage{
+    /* background: chartreuse; */
+
+    display: grid;
+    grid-template-rows: 15fr 80fr 15fr;
+    grid-template-areas: "page2-head"
+                          "page2-content"
+                          "page2-lower";
+}
+.page2-head{
+    /* background: darkgoldenrod; */
+    font-size: 3rem;
+    font-weight: var(--bold);
+    font-family: var(--parafont);
+    color: #05c46b;
+}
+.page2-content{
+    background: #ffff;
+    display: grid;
+    grid-template-rows: 15fr 15fr 15fr 15fr 40fr;
+    grid-template-areas: "date"
+                         "credit"
+                         "debit"
+                         "balance"
+                         "description";
+                        
+                         box-shadow: 2px 4px 10px 0px gray;
+}
+.page2-lower{
+    /* background: darkslategray; */
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    grid-template-areas: "create back";
+}
+.updateBtn{
+    position: relative;
+    right: 40%;
+    visibility: hidden;
+}
+
+.create{
+    /* background: lawngreen; */
+    position: relative;
+    left: 10%;
+
+}
+.inner-create{
+    height: 40%;
+    width: 40%;
+    font-size: 1.8rem;
+    background: #05c46b;
+    border: 1px solid #05c46b;
+    color: #ffff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-family: var(--parafont);
+
+}
+.inner-create:hover{
+    cursor: pointer;
+}
+
+.back{
+    /* background: lightgreen; */
+
+}
+.inner-back{
+    height: 40%;
+    width: 40%;
+    font-size: 1.8rem;
+    background: #05c46b;
+    border: 1px solid #05c46b;
+    color: #ffff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-family: var(--parafont);
+}
+.inner-back:hover{
+    cursor: pointer;
+}
+.blur{
+    filter: blur(3px);
+}
+.opaque{
+    visibility: visible;
+}
+.hidden{
+    visibility: hidden;
+    /* filter: blur(0px); */
+}
+.page2cont{
+    border-bottom: 1px solid gray;
+    
+
+}
+.username{
+    padding: 1.7rem 2.5rem;
+    width: 80%;
+    font-family: var(--parafont);
+    /* border: 1px solid gray; */
+    font-size: 2rem;
+    font-family: var(--parafont);
+    
+    
+
+
+}
+.username:focus{
+    outline: none;
+}
+@media only screen and (max-width:850px)
+{
+    html{
+        font-size: 55%;
+    }
+}
+@media only screen and (max-width:700px)
+{
+    html{
+        font-size: 50%;
+    }
+    .page2{
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        height: 100%;
+        width: 98%;
+      
+        
+    }
+}
+@media only screen and (max-width:600px){
+    .heading>p{
+        color: #3d3d3d;
+        font-size: 4rem;
+        font-family: var(--parafont);
+        /* font-weight: bold; */
+        letter-spacing: 0.2rem;
+      
+    }
+    .innerimage{
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        /* background: url("./IMG-20190326-WA0026.jpg");
+        background-size: 100% 100%; */
+        box-shadow: 2px 4px 10px 0px gray;
+    }
+   
+
+}
+@media only screen and (max-width:500px){
+    .innerimage{
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: url("./IMG-20190326-WA0026.jpg");
+        background-size: 100% 100%;
+        box-shadow: 2px 4px 10px 0px gray;
+    }
+    .heading>p{
+        color: #3d3d3d;
+        font-size: 4rem;
+        font-family: var(--parafont);
+        /* font-weight: bold; */
+        letter-spacing: 0.2rem;
+      
+    }
+    html{
+        font-size: 45%;
+    }
+
+
+}
+@media only screen and (max-width:420px){
+
+    .innerimage{
+        height: 75px;
+        width: 75px;
+        border-radius: 50%;
+        background: url("./IMG-20190326-WA0026.jpg");
+        background-size: 100% 100%;
+        box-shadow: 2px 4px 10px 0px gray;
+    }
+    .heading>p{
+        color: #3d3d3d;
+        font-size: 3.2rem;
+        font-family: var(--parafont);
+        /* font-weight: bold; */
+        letter-spacing: 0.2rem;
+        padding-left: 1rem;
+      
+    }
+    .contentHeading{
+        /* border: solid 1px black; */
+        font-size: 2.1rem;
+        color:#05c46b;
+        font-family: var(--parafont);
+    
+    }
+    .cont{
+        font-size: 1.8rem;
+        color:gray;
+        font-family: var(--parafont);
+    
+    }
+
+}

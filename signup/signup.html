@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="./signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;700;800&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/980ae3f9ab.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="signUpPage">
+
+            <div></div>
+            <div class="signup">
+                <div></div>
+                <div class="content-image">
+                    <div class="content">
+                        <div class="heading">
+                            Sign up
+                        </div>
+                        <div class="name">
+                            <i class="fas fa-user"></i>
+                            <input type="text" class="yourname" id="signup-name" placeholder="Your name">
+                        </div>
+                        <div class="email">
+                            <i class="fas fa-envelope"></i>
+                            <input type="text" class="yourname" id="signup-email" placeholder="Your Email">
+                        </div>
+                        <div class="pass">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" class="yourname" id="signup-pass" placeholder="Password">
+                        </div>
+                        <div class="repeat-pass">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" class="yourname" id="signup-repeat" placeholder="Repeat you password">
+                        </div>
+                        <div class="terms">
+                             <input type="checkbox" class="checkbox">
+                             <span>I agree all statements in terms of service</span>
+                            
+                        </div>
+                        <div class="register">
+                            <div class="reg-btn flex">
+                                Register
+                            </div>
+                        </div>
+                    </div>
+                    <div class="image">
+                        <div class="inner-image">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+                
+            </div>
+            <div></div>
+        </div>
+    </div>
+    
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDv2JfmZEAmIiTsS0TmMZFu0RonkTopfxY",
+    authDomain: "payrollmanagement-system.firebaseapp.com",
+    databaseURL: "https://payrollmanagement-system.firebaseio.com",
+    projectId: "payrollmanagement-system",
+    storageBucket: "payrollmanagement-system.appspot.com",
+    messagingSenderId: "165995460018",
+    appId: "1:165995460018:web:ec3d24b21b84ecb5d8a0ab"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+    <script src="./signup.js"></script>
+    
+</body>
+</html>

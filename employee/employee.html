@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+    <link rel="stylesheet" href="./employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&family=Poppins:wght@300;700;800&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/980ae3f9ab.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="page1">
+            <div></div>
+            <div class="empdata">
+                <div class="header">
+                    <div class="image flex">
+                        <div class="innerimage">
+                            
+                        </div>
+                    </div>
+                        <div class="heading flex">
+                            <p>Employee Panel</p>
+                        </div>
+                        <div class="name flex">
+                            <i class="fas fa-power-off signoutBtn"></i>
+                            <h4>Log Out</h4>
+                            <p class="names">Moiz</p>
+                        </div>
+                  
+                   
+                </div>
+                <div class="content">
+                    <div class="columns-head">
+                        <div class="date contentHeading flex">
+                            <p>Date</p>
+                        </div>
+                        <div class="credit contentHeading flex">
+                            <p>Credit</p>
+                        </div>
+                        <div class="debit contentHeading flex">
+                            <p>Debit</p>
+                        </div>
+                        <div class="balance contentHeading flex">
+                            <p>Descript</p>
+                            
+                        </div>
+                        <!-- <div class="des contentHeading flex">
+                            <p>Description</p>
+
+                        </div> -->
+                        <div class="icons contentHeading flex">
+                            
+                            <p>Edit / Del</p>
+                        </div>
+                    </div>
+                    <div class="columns-content">
+                        <div class="content1 outercontent">
+                          
+                            <div class="cont-date cont flex">
+                                <p>12-3-2020</p>
+                            </div>
+                            <div class="cont-desdes cont flex">
+                                <p>500</p>
+                            </div>
+                            <div class="cont-credit cont flex">
+                                <p>0</p>
+                            </div>
+                            <div class="cont-debit cont flex">
+                                <p>500</p>
+                            </div>
+                           
+                            <div class="cont-icons cont flex">
+                                <i class="fas fa-retweet update"></i>
+                                <i class="fas fa-trash-alt delete"></i>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                    <div class="button">
+                        <div class="amount">
+                            <p>Amount : <span id="amt">0.00</span></p>
+                        </div>
+                        <div class="add-btn flex">
+                            <i class="fas fa-plus-circle addbtn"></i>
+                        </div>
+                        <div class="search flex">
+                            <div class="search-child flex">
+                                <input type="text" class="searching" placeholder="Search here.">
+                            </div>
+                        </div>
+                          
+    
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div></div>
+            <div class="page2">
+                <div></div>
+                <div class="employeepage">
+                    <div class="page2-head flex">
+                        Input User Data
+                    </div>
+                    <div class="page2-content">
+                       <div class="date page2cont">
+                        <input type="date" class="username" id="User-date" placeholder="Date">
+                       </div>
+                       <div class="credit page2cont">
+                        <input type="text" class="username" id="User-credit"placeholder="Credit">
+                       </div>
+                       <div class="debit page2cont">
+                        <input type="text" class="username" id="User-debit" placeholder="Debit">
+                       </div>
+                       <div class="balance page2cont">
+                        <input type="text" class="username" id="User-balance" placeholder="Transaction via">
+                       </div>
+                       <div class="description page2cont">
+                        <input type="text" class="username" id="User-description" placeholder="Description">
+                       </div>
+                       <!-- <div class="image page2cont">
+                        <input type="file" class="username" placeholder="Image">
+                       </div> -->
+                    </div>
+                    <div class="page2-lower">
+                        <div class="create flex">
+                            <div class="inner-create flex">Create</div>
+                            <div class="updateBtn inner-create flex">Update</div>
+                        </div>
+                       
+                        <div class="back flex">
+                            <div class="inner-back flex">Back</div>
+                        </div>
+                    </div>
+                </div>
+                <div></div>
+            </div>
+
+        </div>
+        
+          
+
+        
+
+    </div>
+        
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-storage.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-firestore.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDv2JfmZEAmIiTsS0TmMZFu0RonkTopfxY",
+    authDomain: "payrollmanagement-system.firebaseapp.com",
+    databaseURL: "https://payrollmanagement-system.firebaseio.com",
+    projectId: "payrollmanagement-system",
+    storageBucket: "payrollmanagement-system.appspot.com",
+    messagingSenderId: "165995460018",
+    appId: "1:165995460018:web:ec3d24b21b84ecb5d8a0ab"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script src="./employee.js"></script>
+</body>
+</html>
