@@ -49,7 +49,8 @@ signin.addEventListener("click", async(e)=>
             var loggeduser=await auth.signInWithEmailAndPassword(signInEm,signInPs);
             
             
-            window.open("http://127.0.0.1:5500/adminPanel/adminpanel.html");
+        
+            location.assign("./adminpanel.html")
            
 
             //fetching UserInfo
@@ -86,7 +87,7 @@ try {
             email,
             createAt: new Date()
            }
-           console.log(UserInformation)
+        //    console.log(UserInformation)
            await firestore.collection("Admin").doc(uid).set(UserInformation);
 
            
@@ -97,13 +98,14 @@ try {
 
         
     }
-    window.open("http://127.0.0.1:5500/adminPanel/adminpanel.html");
+    location.assign("./adminpanel.html")
+    
 
  
    
     
 } catch (error) {
-    console.log(error)
+    alert(error)
     
 }
 }

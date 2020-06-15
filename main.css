@@ -126,6 +126,7 @@ height: 70%;
     font-size: 2rem;
     background: #ffff;
     
+    
 
 
 }
@@ -208,6 +209,30 @@ a:link,a:active,a:focus,a:visited{
 .signupbtn:hover{
     cursor: pointer;
 }
+@media only screen and (max-width: 900px)
+{
+    .innerButton{
+        position: relative;
+        left: 25%;
+        height: 40%;
+        width: 50%;
+        /* background: palevioletred; */
+        /* box-shadow: 2px 4px 10px 0px gray; */
+        border: 1px solid gray;
+    }
+    .innerButton>p{
+        font-size: 1.5rem;
+        font-family: var(--parafont);
+        padding-left: 1.5rem;
+        color:gray;
+    
+    }
+    .innerButton>i{
+        font-size: 2.2rem;
+        color:#05c46b;
+    
+    }
+}
 @media only screen and (max-width: 850px)
 {
     html{
@@ -267,9 +292,54 @@ a:link,a:active,a:focus,a:visited{
         bottom: 50%;
       
     }
+    .innerButton{
+        position: relative;
+        left: 35%;
+        height: 40px;
+        width: 180px;
+        /* background: palevioletred; */
+        /* box-shadow: 2px 4px 10px 0px gray; */
+        border: 1px solid gray;
+    }
+    .innerButton>p{
+        font-size: 1.5rem;
+        font-family: var(--parafont);
+        padding-left: 1.5rem;
+        color:gray;
+    
+    }
+    .innerButton>i{
+        font-size: 2.2rem;
+        color:#05c46b;
+    
+    }
    
    
    
+}
+@media only screen and (max-width: 600px)
+{
+    .innerButton{
+        position: relative;
+        left: 30%;
+        height: 40px;
+        width: 180px;
+        /* background: palevioletred; */
+        /* box-shadow: 2px 4px 10px 0px gray; */
+        border: 1px solid gray;
+    }
+    .innerButton>p{
+        font-size: 1.5rem;
+        font-family: var(--parafont);
+        padding-left: 1.5rem;
+        color:gray;
+    
+    }
+    .innerButton>i{
+        font-size: 2.2rem;
+        color:#05c46b;
+    
+    }
 }
 @media only screen and (max-width: 500px){
     html{
@@ -289,5 +359,26 @@ a:link,a:active,a:focus,a:visited{
     }
     html{
         font-size: 50%;
+    }
+    .innerButton{
+        position: relative;
+        left: 25%;
+        height: 35px;
+        width: 150px;
+        /* background: palevioletred; */
+        /* box-shadow: 2px 4px 10px 0px gray; */
+        border: 1px solid gray;
+    }
+    .innerButton>p{
+        font-size: 1.5rem;
+        font-family: var(--parafont);
+        padding-left: 1.5rem;
+        color:gray;
+    
+    }
+    .innerButton>i{
+        font-size: 2.2rem;
+        color:#05c46b;
+    
     }
 }

@@ -130,8 +130,8 @@ html{
     height: 90px;
     width: 90px;
     border-radius: 50%;
-    /* background: url("./IMG-20190326-WA0026.jpg");
-    background-size: 100% 100%; */
+    background: url("./loading.gif");
+    background-size: 100% 100%;
     box-shadow: 2px 4px 10px 0px gray;
 }
 .content{

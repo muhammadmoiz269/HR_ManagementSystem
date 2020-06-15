@@ -18,6 +18,8 @@ regBtn.addEventListener("click", async function(e)
     var signUpNm=signupName.value;
     var signUpEm=signupEmail.value;
     var signUpPs=signupPass.value;
+    if(signUpNm && signUpEm && signUpPs)
+    {
     try {
         if(signupPass.value === signupRepeat.value) 
         {
@@ -31,11 +33,16 @@ regBtn.addEventListener("click", async function(e)
             UserEmail:signUpEm
         }
         await firestore.collection("Admin").doc(signeduser.user.uid).set(userObj);
+        alert("User Created");
         
     } catch (error) {
         alert(error.message)
         
     }
+}
+else{
+    alert("Fields are Empty")
+}
    
 
     

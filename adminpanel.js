@@ -26,6 +26,7 @@ var reference=firebase.storage().ref();
 var id;
 
 
+
              //connect firestore and auth functionality from database
 var firestore=firebase.firestore();
 var auth=firebase.auth();
@@ -68,7 +69,10 @@ contentArea.addEventListener("click",function(extraInfo)
     {
         var newid=extraInfo.target.id;
             //transfering id from admin page to employee page
-    location.assign(`http://127.0.0.1:5500/employee/employee.html#${newid}`)
+            var encryptedAES = CryptoJS.AES.encrypt(newid, "employee data");
+
+    location.assign(`./employee.html#${encryptedAES}`)
+    
     
   
     }
@@ -77,6 +81,7 @@ contentArea.addEventListener("click",function(extraInfo)
             //create button
 create.addEventListener("click",async function(e)
 {
+    var checker=0;
     e.preventDefault();
   
 
@@ -99,38 +104,78 @@ create.addEventListener("click",async function(e)
     var empCnic=usercnic.value;
     var empDate=userdate.value;
 
-       empObj={
-           EmployeeName:empName.toLowerCase(),
-           EmployeeFatherName:empFatherName,
-           EmployeeDesignation:empDesignation,
-           EmployeeCnic:empCnic,
-           EmployeeJoiningdate:empDate,
-           EmployeeImg:imgurl,
+    if(empName && empFatherName && empDesignation && empCnic && empDate)
 
+    {  
+       //checking if cnic is unique then pass
+       var EmpCnicCheck=await firestore.collection("Employee").get();
+       EmpCnicCheck.forEach(doc => {
+           var EmployeeCheck=doc.data();
+           if(EmployeeCheck.EmployeeCnic==empCnic)
+           {
+               checker=1;
+           }
+           
+         
+
+       })
+
+       if(checker==1)
+       {
+           alert("CNIC Exist")
+        //    console.log(checker)
+        usercnic.value="";
+       
+     
 
        }
-       
 
-       //passing that obj here in database
-       await firestore.collection("Employee").add(empObj);
-       render();
+       if(checker==0)
+       {
+        empObj={
+            EmployeeName:empName.toLowerCase(),
+            EmployeeFatherName:empFatherName,
+            EmployeeDesignation:empDesignation,
+            EmployeeCnic:empCnic,
+            EmployeeJoiningdate:empDate,
+            EmployeeImg:imgurl,
+    
+    
+        }
+        // console.log(checker)
+
+          //passing that obj here in database
+            await firestore.collection("Employee").add(empObj);
+            render();
+            username.value="";
+            userfathername.value="";
+            usercnic.value="";
+            userdesignation.value="";
+            userdate.value="";
+            userimg.value="";
+           
+
+       }
+      
 
    }
+   else{
+       alert("Fields are Empty")
+   }
+   
+}
+
+  
    catch (error) {
        alert(error.message)
        
    }
 
-   username.value="";
-   userfathername.value="";
-   usercnic.value="";
-   userdesignation.value="";
-   userdate.value="";
-   userimg.value="";
+  
 
 })
-var x = "Total Width: " + screen.width;
-console.log(x)
+
+
             //add function for rendering real time values
 var add=(name,designation,cnic,id,img)=>{
 
@@ -176,6 +221,7 @@ var render=async(e)=>{
     var EmpInfo=await firestore.collection("Employee").get();
     EmpInfo.forEach(doc => {
         var EmployeeData=doc.data();
+        
         add(EmployeeData.EmployeeName,EmployeeData.EmployeeDesignation,EmployeeData.EmployeeCnic,doc.id,EmployeeData.EmployeeImg)
         
         // id=doc.id;

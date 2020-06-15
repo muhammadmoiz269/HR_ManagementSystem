@@ -25,7 +25,10 @@ var id;
 
 
             //fetching id from url
-var uid=location.hash.substring(1,location.hash.length)
+
+var Fetched_Id = location.hash.substring(1,location.hash.length);
+var decryptedBytes = CryptoJS.AES.decrypt(Fetched_Id, "employee data");
+var uid = decryptedBytes.toString(CryptoJS.enc.Utf8);
 
 
             //connect firestore and auth functionality from database
@@ -45,7 +48,7 @@ addbtn.addEventListener("click",function()
 })
 
         //update Button
- updateBtn.addEventListener("click", async function(extraInfo)
+updateBtn.addEventListener("click", async function(extraInfo)
  {
     var EmpInfo=await firestore.collection("EmployeeData").get();
     EmpInfo.forEach(doc => {
@@ -55,7 +58,7 @@ addbtn.addEventListener("click",function()
         if(updateid==doc.id)
             {
           firestore.collection("EmployeeData").doc(doc.id).get();
-          console.log(doc.id)
+        //   console.log(doc.id)
 
           var empDate=userDate.value;
           var empCredit=userCredit.value;
@@ -71,7 +74,7 @@ addbtn.addEventListener("click",function()
                   EmployeesCredit:empCredit,
                   EmployeesDebit:empDebit,
                   EmployeesBalance:empBalance,
-                  EmployeesDescription:empDescription,
+                  EmployeesDescription:empDescription.toLowerCase(),
                   EmployeesId:empid,
               }
       
@@ -125,21 +128,25 @@ create.addEventListener("click",async function(e)
     
     e.preventDefault();
     
-    var empDate=userDate.value;
+    var empDate= new Date(userDate.value);
+    var dt=empDate.getDate();
+    var mn=empDate.getMonth()+1;
     var empCredit=userCredit.value;
     var empDebit=userDebit.value;
     var empBalance=userBalance.value;
     var empDescription=userDescription.value;
     var empid=uid;
 
+if(empDate && empCredit && empDebit && empBalance && empDescription)
+{
     try {
 
         EmployeeObj={
-            EmployeesDate:empDate,
+            EmployeesDate:(dt+"/"+mn),
             EmployeesCredit:empCredit,
             EmployeesDebit:empDebit,
             EmployeesBalance:empBalance,
-            EmployeesDescription:empDescription,
+            EmployeesDescription:empDescription.toLowerCase(),
             EmployeesId:empid,
         }
 
@@ -153,6 +160,12 @@ create.addEventListener("click",async function(e)
      alert(error.message)
 
         
+    }
+    location.reload();
+
+}
+    else{
+        alert("Fields are Empty")
     }
     userDate.value="";
     userCredit.value="";
@@ -220,15 +233,16 @@ var render=async(e)=>{
         
         
         //logic for Amount button
+
          var credit=EmployeeData.EmployeesCredit
          var debit=EmployeeData.EmployeesDebit;
         newamount = newamount+(credit-debit);
-    
+        amount.textContent=newamount;
+   
         
        
        
     });
-    amount.textContent=newamount;
 
             //only taking first name by splitting string
     var UserInfo=await firestore.collection("Employee").doc(uid).get();
@@ -312,7 +326,7 @@ content.addEventListener("click", async function(extraInfo)
             //signOut Button
 signoutBtn.addEventListener("click",function()
 {
-    location.assign("http://127.0.0.1:5500/adminPanel/adminpanel.html");
+    location.assign("./adminpanel.html");
     // await auth.signout();
 })
             //Search 
